@@ -3,12 +3,30 @@
  */
 package org.example;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import java.util.Scanner;
 
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        TriangleNumberCalculator calculator = new TriangleNumberCalculator();
+        Scanner scanner = new Scanner(System.in);
+
+      
+        System.out.print("Enter a positive integer n to calculate the nth triangular number: ");
+        int n = scanner.nextInt();
+        System.out.println("T(" + n + ") = " + calculator.value(n));
+
+        
+        System.out.print("Enter two positive integers n and m to add their triangular numbers: ");
+        int n1 = scanner.nextInt();
+        int m1 = scanner.nextInt();
+        System.out.println("T(" + n1 + ") + T(" + m1 + ") = " + calculator.add(n1, m1));
+
+        
+        System.out.print("Enter two positive integers n and m to subtract their triangular numbers (T(n) - T(m)): ");
+        int n2 = scanner.nextInt();
+        int m2 = scanner.nextInt();
+        System.out.println("T(" + n2 + ") - T(" + m2 + ") = " + calculator.subtract(n2, m2));
+
+        scanner.close();
     }
 }
